@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
+        android:fontFamily="@font/lexend_bold"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,6 +133,7 @@
         android:layout_marginTop="16dp"
         android:text="Estimated Price (Optional)"
         app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/lexend_bold"
         app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText2" />
@@ -142,6 +144,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Category"
+
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
@@ -260,6 +264,7 @@
         android:hint="Apple"
         android:imeOptions="actionDone"
         android:padding="12dp"
+        android:fontFamily="@font/lexend_bold"
         android:text="Apple"
         android:textColor="@android:color/black"
         android:textSize="16sp"
