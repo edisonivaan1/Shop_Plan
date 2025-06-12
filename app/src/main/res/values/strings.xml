@@ -3,13 +3,20 @@
     <string name="login_title">ShopPlan</string>
     <string name="login_hello">Hi, welcome back!</string>
     <string name="login_email_hint">Email</string>
-    <string name="forgot_password">Forgot password?</string>
-    <string name="remember_me">Remember me</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="login_forgot_password">Forgot password?</string>
+    <string name="login_remember_me">Remember me</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
     <string name="login_loginButton">LOGIN</string>
     <string name="login_with_facebook">Login with Facebook</string>
     <string name="login_with_google">Login with Google</string>
     <string name="login_dont_have_account">Don\'t have an account?</string>
     <string name="login_sign_up">Sign Up</string>
+    <string name="register_create_an_account">Create an account</string>
+    <string name="register_enter_your_password">Enter your password</string>
+    <string name="register_enter_your_phone_number">Enter your phone number</string>
+    <string name="register_enter_your_email">Enter your email</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="register_log_in">Login</string>
+    <string name="register_button">SIGN UP</string>
 </resources>
