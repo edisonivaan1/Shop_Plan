@@ -29,5 +29,6 @@
     <!-- Color del texto general -->
     <color name="textColor">#555555</color>
 
+    <color name="gray">#626161</color>
 
 </resources>
