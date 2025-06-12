@@ -131,6 +131,7 @@
         android:text="Purchase history"
         android:textStyle="bold"
         android:textSize="20sp"
+        android:fontFamily="@font/lexend_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
@@ -185,6 +186,7 @@
                     android:text="May 26, 2025 - June 1, 2025"
                     android:textColor="#4CAF50"
                     android:textSize="16sp"
+                    android:fontFamily="@font/lexend_bold"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -203,6 +205,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Products:"
+                    android:fontFamily="@font/lexend_bold"
                     android:textSize="14sp" />
 
                 <TextView
@@ -211,6 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Purchased:"
+                    android:fontFamily="@font/lexend_bold"
                     android:textSize="14sp" />
 
                 <TextView
@@ -218,6 +222,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/lexend_bold"
                     android:text="Total:"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
@@ -238,6 +243,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="5"
+                    android:fontFamily="@font/lexend_bold"
                     android:textSize="14sp" />
 
                 <TextView
@@ -245,6 +251,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/lexend_bold"
                     android:text="4"
                     android:textSize="14sp" />
 
@@ -255,6 +262,7 @@
                     android:layout_weight="1"
                     android:text="$45.00"
                     android:textColor="#FF9800"
+                    android:fontFamily="@font/lexend_bold"
                     android:textSize="14sp" />
             </LinearLayout>
 

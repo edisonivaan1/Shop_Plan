@@ -13,6 +13,14 @@
         android:theme="@style/Theme.ShopPlan"
         tools:targetApi="31">
         <activity
+            android:name=".Delete_Product"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/title_activity_delete_product"
+            android:theme="@style/Theme.ShopPlan.Fullscreen">
+
+        </activity>
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
@@ -26,14 +34,10 @@
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="true">
-            
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".Purchase_History"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".Edit_Product"
             android:exported="true">
@@ -46,9 +50,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
