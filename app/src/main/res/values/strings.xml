@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Shop Plan</string>
+    <string name="login_title">ShopPlan</string>
+    <string name="login_hello">Hi, welcome back!</string>
+    <string name="login_email_hint">Email</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="remember_me">Remember me</string>
 </resources>
