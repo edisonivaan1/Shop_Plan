@@ -3,4 +3,31 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="logo_name">#61B260</color>
+
+    <!-- Color de los campos de entrada -->
+    <color name="inputBackground">#FFFFFF</color>
+
+    <!-- Color del texto dentro de los campos de entrada -->
+    <color name="inputTextColor">#000000</color>
+
+    <!-- Botón Cancelar -->
+    <color name="buttonCancelColor">#d6dadc</color>
+    <color name="buttonTextColor">#FFFFFF</color>
+
+    <!-- Botón Guardar -->
+    <color name="buttonSaveColor">#5CB85C</color>
+
+    <!-- Color del switch -->
+    <color name="priceColor">#f8e612</color>
+
+    !-- Fondo de la aplicación -->
+    <color name="backgroundColor">#F5F5F5</color>
+
+    <!-- Color del título "ADD PRODUCT" -->
+    <color name="titleColor">#333333</color>
+
+    <!-- Color del texto general -->
+    <color name="textColor">#555555</color>
+
+
 </resources>
