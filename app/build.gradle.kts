@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.appcompat)
     implementation ("com.google.android.gms:play-services-auth:20.7.0")
     implementation ("com.facebook.android:facebook-login:latest.release")
+    implementation (platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation ("com.google.firebase:firebase-firestore-ktx")
     implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
