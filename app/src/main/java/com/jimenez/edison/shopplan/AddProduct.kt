@@ -1,5 +1,6 @@
 package com.jimenez.edison.shopplan
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -185,7 +186,8 @@ class AddProduct : AppCompatActivity() {
                 Toast.makeText(this, "Producto guardado exitosamente", Toast.LENGTH_SHORT).show()
                 clearForm()
                 saveButton.isEnabled = true
-                // Opcional: regresar a la pantalla anterior
+                val intent = Intent(this, PricipalActivity::class.java)
+                startActivity(intent)
                 // finish()
             }
             .addOnFailureListener { e ->
