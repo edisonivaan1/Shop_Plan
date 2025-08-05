@@ -19,4 +19,12 @@
     <string name="already_have_account">Already have an account?</string>
     <string name="register_log_in">Login</string>
     <string name="register_button">SIGN UP</string>
+    <string name="phone_number">Phone number</string>
+    <string name="user_correo">nilson.angulo.nazareno@epn.edu.ec</string>
+    <string name="email">Email</string>
+    <string name="title_activity_delete_product">Eliminar producto</string>
+    <!-- app/src/main/res/values/strings.xml -->
+    <string name="main_add_product">Agregar producto</string>
+    <string name="facebook_app_id">TU_FACEBOOK_APP_ID</string>
+    <string name="facebook_client_token">TU_CLIENT_TOKEN</string>
 </resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "421932669674",
+    "project_id": "shop-plan-57c81",
+    "storage_bucket": "shop-plan-57c81.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421932669674:android:1ed73f2639b2266bc15593",
+        "android_client_info": {
+          "package_name": "com.jimenez.edison.shopplan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCos3-EJw3zAHdDQG9GJMEC2n2VsqKjIkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
