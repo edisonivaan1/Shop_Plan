@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFF"
     tools:context=".Purchase_History">
 
     <LinearLayout
@@ -104,13 +105,13 @@
         android:layout_height="25dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         android:src="@drawable/menu_svgrepo_com"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@android:color/transparent"
         tools:srcCompat="@drawable/menu_svgrepo_com" />
 
     <SearchView
@@ -128,10 +129,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Purchase history"
-        android:textStyle="bold"
-        android:textSize="20sp"
         android:fontFamily="@font/lexend_bold"
+        android:text="Purchase history"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
@@ -183,10 +184,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/lexend_bold"
                     android:text="May 26, 2025 - June 1, 2025"
                     android:textColor="#4CAF50"
                     android:textSize="16sp"
-                    android:fontFamily="@font/lexend_bold"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -204,8 +205,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Products:"
                     android:fontFamily="@font/lexend_bold"
+                    android:text="Products:"
                     android:textSize="14sp" />
 
                 <TextView
@@ -213,8 +214,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Purchased:"
                     android:fontFamily="@font/lexend_bold"
+                    android:text="Purchased:"
                     android:textSize="14sp" />
 
                 <TextView
@@ -242,8 +243,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="5"
                     android:fontFamily="@font/lexend_bold"
+                    android:text="5"
                     android:textSize="14sp" />
 
                 <TextView
@@ -260,9 +261,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/lexend_bold"
                     android:text="$45.00"
                     android:textColor="#FF9800"
-                    android:fontFamily="@font/lexend_bold"
                     android:textSize="14sp" />
             </LinearLayout>
 

@@ -96,15 +96,13 @@
         android:id="@+id/login_remember_me"
         android:layout_width="130dp"
         android:layout_height="20dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/lexend"
         android:text="@string/login_remember_me"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/login_forgot_password"
-        app:layout_constraintHorizontal_bias="0.08"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/register_button"
+        app:layout_constraintEnd_toStartOf="@+id/login_forgot_password" />
 
     <TextView
         android:id="@+id/login_forgot_password"

@@ -68,8 +68,9 @@
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/main_my_shopping_of_the_week"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="88dp"
+        android:text="My shopping of the week"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -92,7 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/your_list_is_empty"
+        android:text="Your list is empty"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +105,7 @@
         android:id="@+id/addProductsHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/main_add_products_with_the_button_below"
+        android:text="Add products with the button below"
         android:textColor="@color/gray"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lexend_bold"
                 android:paddingStart="8dp"
-                android:text="@string/main_mybag"
+                android:text="My bag"
                 android:textColor="#4CAF50"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -180,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lexend_bold"
                 android:paddingStart="8dp"
-                android:text="@string/main_history"
+                android:text="History"
                 android:textSize="16sp" />
         </LinearLayout>
 
