@@ -64,6 +64,143 @@
         app:layout_constraintStart_toEndOf="@+id/user_logo"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/user_profile_image"
+        android:layout_width="144dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/man" />
+
+    <TextView
+        android:id="@+id/user_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="176dp"
+        android:fontFamily="@font/lexend_bold"
+        android:text="NILSON ANGULO"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_image" />
+
+    <!-- PROGRESS BAR PARA MOSTRAR ESTADO DE CARGA -->
+    <ProgressBar
+        android:id="@+id/loading_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_name" />
+
+    <TextView
+        android:id="@+id/user_email_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lexend_bold"
+        android:text="@string/email"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_name" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/user_email_input"
+        android:layout_width="327dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/inputBackground"
+        android:fontFamily="@font/lexend_bold"
+        android:hint="@string/user_correo"
+        android:textColor="@color/inputTextColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_email_label" />
+
+    <TextView
+        android:id="@+id/user_phone_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/lexend_bold"
+        android:text="@string/phone_number"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_email_input" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/user_phone_input"
+        android:layout_width="327dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/inputBackground"
+        android:fontFamily="@font/lexend_bold"
+        android:hint="09******87"
+        android:textColor="@color/inputTextColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_phone_label" />
+
+    <TextView
+        android:id="@+id/user_password_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/lexend_bold"
+        android:text="Password"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_phone_input" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/user_password_input"
+        android:layout_width="327dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/inputBackground"
+        android:fontFamily="@font/lexend_bold"
+        android:hint="*******"
+        android:textColor="@color/inputTextColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_password_label" />
+
+    <!-- BOTÓN SIGN OUT CORRECTAMENTE POSICIONADO -->
+    <Button
+        android:id="@+id/user_sign_out_button"
+        android:layout_width="200dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/buttonCancelColor"
+        android:fontFamily="@font/lexend_bold"
+        android:text="Sign out"
+        android:textColor="@color/inputTextColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_password_input" />
+
+    <!-- NAVIGATION BAR EN LA PARTE INFERIOR -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -125,175 +262,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/user_save_button"
-        android:layout_width="137dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="40dp"
-        android:layout_weight="1"
-        android:backgroundTint="@color/buttonSaveColor"
-        android:fontFamily="@font/lexend_bold"
-        android:text="Save"
-        android:textColor="@color/buttonTextColor"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_gender_input"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/user_sign_out_button"
-        android:layout_width="137dp"
-        android:layout_height="47dp"
-        android:layout_weight="1"
-        android:backgroundTint="@color/buttonCancelColor"
-        android:fontFamily="@font/lexend_bold"
-        android:text="Sign out"
-        android:textColor="@color/inputTextColor"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/user_save_button"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="564dp" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/user_password_input"
-        android:layout_width="327dp"
-        android:layout_height="39dp"
-        android:backgroundTint="@color/inputBackground"
-        android:hint="*******"
-        android:fontFamily="@font/lexend_bold"
-        android:textColor="@color/inputTextColor"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_password_label"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/user_gender_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Gender"
-        android:fontFamily="@font/lexend_bold"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_password_input" />
-
-    <TextView
-        android:id="@+id/user_password_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Password"
-        android:fontFamily="@font/lexend_bold"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_phone_input" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/user_gender_input"
-        android:layout_width="327dp"
-        android:layout_height="39dp"
-        android:backgroundTint="@color/inputBackground"
-        android:hint="male"
-        android:fontFamily="@font/lexend_bold"
-        android:textColor="@color/inputTextColor"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_gender_label"
-        tools:ignore="MissingConstraints" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/user_phone_input"
-        android:layout_width="327dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="1dp"
-        android:backgroundTint="@color/inputBackground"
-        android:hint="09******87"
-        android:fontFamily="@font/lexend_bold"
-        android:textColor="@color/inputTextColor"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_phone_label"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/user_email_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lexend_bold"
-        android:text="@string/email"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_profile_name" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/user_email_input"
-        android:layout_width="327dp"
-        android:layout_height="39dp"
-        android:backgroundTint="@color/inputBackground"
-        android:hint="@string/user_correo"
-        android:textColor="@color/inputTextColor"
-        android:fontFamily="@font/lexend_bold"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_email_label"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/user_phone_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/phone_number"
-        android:fontFamily="@font/lexend_bold"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_email_input" />
-
-    <ImageView
-        android:id="@+id/user_profile_image"
-        android:layout_width="144dp"
-        android:layout_height="122dp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/man" />
-
-    <TextView
-        android:id="@+id/user_profile_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="176dp"
-        android:text="NILSON ANGULO"
-        android:fontFamily="@font/lexend_bold"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_profile_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.jimenez.edison.shopplan
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -26,6 +27,7 @@ class Login : AppCompatActivity() {
     private val RC_SIGN_IN = 100
     private lateinit var callbackManager: CallbackManager
     private lateinit var auth: FirebaseAuth
+    private lateinit var sharedPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,8 @@ class Login : AppCompatActivity() {
         }
 
         auth = Firebase.auth
+        sharedPref = getSharedPreferences("loginPrefs", MODE_PRIVATE)
+
         // Referencias UI
         val emailInput = findViewById<EditText>(R.id.login_email)
         val passwordInput = findViewById<EditText>(R.id.login_password)
@@ -48,6 +52,14 @@ class Login : AppCompatActivity() {
         val signupButton = findViewById<Button>(R.id.login_signup_button)
         val googleButton = findViewById<Button>(R.id.login_google_button)
         val facebookButton = findViewById<Button>(R.id.login_facebook_button)
+
+        // Recuperar datos guardados
+        val savedEmail = sharedPref.getString("email", "")
+        val savedPassword = sharedPref.getString("password", "")
+        val isRemembered = sharedPref.getBoolean("rememberMe", false)
+        emailInput.setText(savedEmail)
+        passwordInput.setText(savedPassword)
+        rememberMe.isChecked = isRemembered
 
         // Google Sign-In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -67,7 +79,6 @@ class Login : AppCompatActivity() {
             LoginManager.getInstance().registerCallback(callbackManager,
                 object : FacebookCallback<LoginResult> {
                     override fun onSuccess(result: LoginResult) {
-                        // Usuario autenticado con Facebook
                         val intent = Intent(this@Login, MainActivity::class.java)
                         startActivity(intent)
                         finish()
@@ -85,6 +96,22 @@ class Login : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // Guardar preferencia de "Remember Me" al cambiar el checkbox
+        rememberMe.setOnCheckedChangeListener { _, isChecked ->
+            val editor = sharedPref.edit()
+            if (isChecked) {
+                editor.putString("email", emailInput.text.toString())
+                editor.putString("password", passwordInput.text.toString())
+                editor.putBoolean("rememberMe", true)
+                Toast.makeText(this, "Recordando usuario...", Toast.LENGTH_SHORT).show()
+            } else {
+                editor.remove("email")
+                editor.remove("password")
+                editor.putBoolean("rememberMe", false)
+            }
+            editor.apply()
+        }
+
         loginButton.setOnClickListener {
             val email = emailInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
@@ -100,19 +127,25 @@ class Login : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Guardar o limpiar preferencias según el checkbox
+            val editor = sharedPref.edit()
+            if (rememberMe.isChecked) {
+                editor.putString("email", email)
+                editor.putString("password", password)
+                editor.putBoolean("rememberMe", true)
+            } else {
+                editor.remove("email")
+                editor.remove("password")
+                editor.putBoolean("rememberMe", false)
+            }
+            editor.apply()
+
             AutenticarUsuario(email, password)
         }
 
         // Acción al presionar "Forgot Password"
         forgotPassword.setOnClickListener {
             Toast.makeText(this, "Función de recuperación en desarrollo", Toast.LENGTH_SHORT).show()
-        }
-
-        // Guardar preferencia de "Remember Me"
-        rememberMe.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                Toast.makeText(this, "Recordando usuario...", Toast.LENGTH_SHORT).show()
-            }
         }
     }
 

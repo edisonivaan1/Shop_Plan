@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Register : AppCompatActivity() {
     private lateinit var editTextEmail: EditText
@@ -19,6 +20,7 @@ class Register : AppCompatActivity() {
     private lateinit var buttonRegister: Button
     private lateinit var buttonLogin: Button
     private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,7 @@ class Register : AppCompatActivity() {
         buttonRegister = findViewById(R.id.register_button)
         buttonLogin = findViewById(R.id.register_login)
         auth = Firebase.auth
+        db = FirebaseFirestore.getInstance()
 
         buttonRegister.setOnClickListener {
             if (validateFields()) {
@@ -46,17 +49,43 @@ class Register : AppCompatActivity() {
     }
 
     private fun registerUser() {
-        val email = editTextEmail.text.toString()
-        val password = editTextPassword.text.toString()
-        // El teléfono no se usa en Firebase Auth por defecto, pero puedes guardarlo en tu base de datos si lo necesitas
+        val email = editTextEmail.text.toString().trim()
+        val phone = editTextPhone.text.toString().trim()
+        val password = editTextPassword.text.toString().trim()
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, Login::class.java)
-                    startActivity(intent)
-                    finish()
+                    // Usuario creado exitosamente en Firebase Auth
+                    val user = auth.currentUser
+                    user?.let {
+                        // Extraer el nombre del email (parte antes del @)
+                        val name = email.substringBefore("@").replaceFirstChar {
+                            if (it.isLowerCase()) it.titlecase() else it.toString()
+                        }
+
+                        // Crear un mapa con los datos del usuario
+                        val userData = hashMapOf(
+                            "name" to name,
+                            "email" to email,
+                            "phone" to phone,
+                            "password" to password, // Nota: En producción, nunca guardes contraseñas en texto plano
+                            "userId" to it.uid
+                        )
+
+                        // Guardar los datos en Firestore
+                        db.collection("users").document(it.uid)
+                            .set(userData)
+                            .addOnSuccessListener {
+                                Toast.makeText(this@Register, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this@Register, Login::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
+                            .addOnFailureListener { e ->
+                                Toast.makeText(this@Register, "Error al guardar datos: ${e.message}", Toast.LENGTH_LONG).show()
+                            }
+                    }
                 } else {
                     Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
                 }
@@ -64,9 +93,9 @@ class Register : AppCompatActivity() {
     }
 
     private fun validateFields(): Boolean {
-        val email = editTextEmail.text.toString()
-        val phone = editTextPhone.text.toString()
-        val password = editTextPassword.text.toString()
+        val email = editTextEmail.text.toString().trim()
+        val phone = editTextPhone.text.toString().trim()
+        val password = editTextPassword.text.toString().trim()
 
         if (email.isEmpty()) {
             editTextEmail.error = "El correo es obligatorio"

@@ -1,7 +1,9 @@
 package com.jimenez.edison.shopplan
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +11,8 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var addFab: com.google.android.material.floatingactionbutton.FloatingActionButton
+    private lateinit var userImage: ImageView
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -22,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         addFab = findViewById(R.id.addFab)
         addFab.setOnClickListener {
             val intent = Intent(this, AddProduct::class.java)
+            startActivity(intent)
+        }
+
+        userImage = findViewById(R.id.user_image)
+        userImage.setOnClickListener {
+            val intent = Intent(this, UserActivity::class.java)
             startActivity(intent)
         }
     }
