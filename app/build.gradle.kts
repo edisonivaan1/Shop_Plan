@@ -37,20 +37,18 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.appcompat)
-    implementation ("com.google.android.gms:play-services-auth:20.7.0")
-    implementation ("com.facebook.android:facebook-login:latest.release")
-    implementation (platform("com.google.firebase:firebase-bom:33.1.2"))
-    implementation ("com.google.firebase:firebase-firestore-ktx")
-    implementation(libs.firebase.auth)
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+    implementation("com.facebook.android:facebook-login:17.0.0")
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.firebase:firebase-analytics-ktx")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
 }

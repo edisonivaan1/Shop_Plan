@@ -79,7 +79,7 @@ class Login : AppCompatActivity() {
             LoginManager.getInstance().registerCallback(callbackManager,
                 object : FacebookCallback<LoginResult> {
                     override fun onSuccess(result: LoginResult) {
-                        val intent = Intent(this@Login, MainActivity::class.java)
+                        val intent = Intent(this@Login, ShoppingListActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
@@ -154,7 +154,7 @@ class Login : AppCompatActivity() {
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             if (task.isSuccessful) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, ShoppingListActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
@@ -168,7 +168,7 @@ class Login : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, ShoppingListActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {
