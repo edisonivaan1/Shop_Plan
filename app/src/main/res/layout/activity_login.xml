@@ -65,33 +65,38 @@
         app:layout_constraintEnd_toStartOf="@+id/login_email"
         app:layout_constraintTop_toTopOf="@+id/login_email" />
 
-    <EditText
-        android:id="@+id/login_password"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_password_layout"
         android:layout_width="280dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:fontFamily="@font/lexend"
-        android:hint="@string/login_password"
-        android:inputType="textPassword"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textSize="16sp"
-        app:drawableEndCompat="@drawable/scaled_view"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_email" />
+        app:layout_constraintTop_toBottomOf="@+id/login_email"
+        app:passwordToggleEnabled="true">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="@font/lexend"
+            android:hint="@string/login_password"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
     <ImageView
         android:id="@+id/login_password_icon"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/scaled_padlock"
-        app:layout_constraintBottom_toBottomOf="@+id/login_password"
-        app:layout_constraintEnd_toStartOf="@+id/login_password"
-        app:layout_constraintTop_toTopOf="@+id/login_password" />
-
+        app:layout_constraintBottom_toBottomOf="@+id/login_password_layout"
+        app:layout_constraintEnd_toStartOf="@+id/login_password_layout"
+        app:layout_constraintTop_toTopOf="@+id/login_password_layout" />
     <CheckBox
         android:id="@+id/login_remember_me"
         android:layout_width="130dp"
@@ -133,8 +138,7 @@
         app:cornerRadius="@dimen/cardview_default_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_password" />
-
+        app:layout_constraintTop_toBottomOf="@+id/login_password_layout" />
     <Button
         android:id="@+id/login_facebook_button"
         android:layout_width="293dp"

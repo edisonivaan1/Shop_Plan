@@ -29,11 +29,15 @@ class Register : AppCompatActivity() {
 
         editTextEmail = findViewById(R.id.register_email)
         editTextPhone = findViewById(R.id.register_phone)
+        // El ID sigue siendo el mismo y funciona perfectamente
         editTextPassword = findViewById(R.id.register_password)
         buttonRegister = findViewById(R.id.register_button)
         buttonLogin = findViewById(R.id.register_login)
         auth = Firebase.auth
         db = FirebaseFirestore.getInstance()
+
+        // No se necesita ningún OnTouchListener aquí,
+        // TextInputLayout se encarga de todo.
 
         buttonRegister.setOnClickListener {
             if (validateFields()) {
@@ -56,24 +60,24 @@ class Register : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Usuario creado exitosamente en Firebase Auth
                     val user = auth.currentUser
                     user?.let {
-                        // Extraer el nombre del email (parte antes del @)
                         val name = email.substringBefore("@").replaceFirstChar {
                             if (it.isLowerCase()) it.titlecase() else it.toString()
                         }
 
-                        // Crear un mapa con los datos del usuario
                         val userData = hashMapOf(
                             "name" to name,
                             "email" to email,
                             "phone" to phone,
-                            "password" to password, // Nota: En producción, nunca guardes contraseñas en texto plano
+                            // Nota de seguridad: En una app de producción real, NUNCA guardes
+                            // contraseñas en texto plano en la base de datos.
+                            // Firebase Auth ya la gestiona de forma segura.
+                            // Puedes omitir esta línea en Firestore.
+                            "password" to password,
                             "userId" to it.uid
                         )
 
-                        // Guardar los datos en Firestore
                         db.collection("users").document(it.uid)
                             .set(userData)
                             .addOnSuccessListener {
@@ -112,7 +116,7 @@ class Register : AppCompatActivity() {
             editTextPhone.requestFocus()
             return false
         }
-        if (!phone.matches(Regex("^0\\d{9}\$"))) {
+        if (!phone.matches(Regex("^0\\d{9}$"))) {
             editTextPhone.error = "El teléfono debe tener 10 dígitos y empezar con 0"
             editTextPhone.requestFocus()
             return false
